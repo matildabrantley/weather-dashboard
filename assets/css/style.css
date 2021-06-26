@@ -1,5 +1,8 @@
+header {
+}
+
 header h1 {
-    background-color: blue;
+    background-image: linear-gradient(to right, rgb(150, 150, 255) , blue); /*rgb(255, 255, 150) is nice*/
     color: white;
     text-align: center;
     height: 10%;

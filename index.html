@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather Dashboard</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,8 +17,17 @@
 </header>
 
 <body>
-    <div class="col-12 col-md-3 bg-light p-3">
+    <div class="col-md-2">
       <h1 class="text-primary">Search for a City:</h1>
+      <form id="search-form" class="mb-4">
+        <input id="search-input" class="form-input" type="text" placeholder="Atlanta">
+        <select id="format-input" class="form-input">
+          <option>Choose system</option>
+          <option value="imperial">Imperial (Farenheit, Miles)</option>
+          <option value="metric">Metric (Celsius, Kilometers)</option>
+        </select>
+        <button class="btn btn-info btn-block">Search</button>
+      </form>
     </div>
 
   <script src="./assets/js/script.js"></script>
