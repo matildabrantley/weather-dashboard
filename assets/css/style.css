@@ -1,11 +1,43 @@
+
+
+.container {
+    display: grid;
+  
+    grid-template-areas:
+      "header header header"
+      "search current current"
+      "search forecast forecast";
+  
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 10px;
+  
+    height: 100vh;
+  }
+
 header {
-    /* width: 100%; */
+    grid-area: header;
+    background-image: linear-gradient(to right, rgb(150, 150, 255) , rgb(3, 3, 70));
+    color: white;
+    text-align: center;
+  }
+
+nav {
+    grid-area: search;
+    background-color: blue;
 }
 
-body {
-    /* display: inline-block; */
+main {
+    grid-area: current;
+    background-color: rgb(246, 242, 242);
 }
 
+section {
+    grid-area: forecast;
+    background-color: darkslategray;
+}
+
+/* 
 #side-nav {
     position: fixed;
     top: 10%;
@@ -31,7 +63,6 @@ main {
     left: 25%;
     width: 60%;
     height: 80vh;
-    /* display: inline-block; */
 }
 
 main article {
@@ -40,14 +71,11 @@ main article {
 }
 
 main #current-weather {
-    /* background-color: skyblue; */
     height: 50%;
     width: 100%;
 }
 
 main #forecast-section {
-    /* background-color:gold; */
-    /* display: block; */
     height: 50%;
     width: 100%;
 }
@@ -60,7 +88,6 @@ main #forecast-section {
     background-color: darkslategrey;
     color: white;
     height: 60%;
-    /* width: 15%; */
     margin: 1%;
 }
 
@@ -71,14 +98,13 @@ main #forecast-section {
 .forecast-info {
     display: block;
     font-size:1rem;
-    /* margin: 5px; */
 }
 
 
 
 header h1 {
-    background-image: linear-gradient(to right, rgb(150, 150, 255) , rgb(3, 3, 70)); /*rgb(255, 255, 150) is nice*/
+    background-image: linear-gradient(to right, rgb(150, 150, 255) , rgb(3, 3, 70));
     color: white;
     text-align: center;
     height: 10%;
-}
+} */
