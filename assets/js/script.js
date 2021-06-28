@@ -39,26 +39,52 @@ async function weather(city){
     //use coordinates to get current weather of city
     var weather = await getWeather(coords[0], coords[1]);
     //display weather
-    displayWeather(weather); 
+    displayWeather(weather, city); 
 }
 
-function displayWeather(weather){
+function displayWeather(weather, city){
     currentWeather = weather.current;
     var date = getDate(currentWeather.dt);
-    console.log(date);
+
+    //display today's weather
+    var weaterContainer = $('#current-weather');
+    weaterContainer.children().eq(0).text(city + " (" + date + ")");
+    weaterContainer.children().eq(1).text("Temp: " + currentWeather.temp);
+    weaterContainer.children().eq(2).text("Wind: " + currentWeather.wind_speed) + " MPH";
+    weaterContainer.children().eq(3).text("Humidity: " + currentWeather.humidity) + "%";
+    weaterContainer.children().eq(4).text("UV Index: " + currentWeather.uvi);
+
 
     forecastDays = weather.daily;
-    for (var d=1; d<6; d++) {
-        date = getDate(forecastDays[d].dt);
-        console.log(date);
+    forecastContainer = $('#forecast-container');
+    for (var day=1; day<6; day++) {
+        var dayContainer = forecastContainer.children().eq(day-1);
+        date = getDate(forecastDays[day].dt);
+        dayContainer.children().eq(0).text(date);
+        dayContainer.children().eq(1).text("Temp: " + forecastDays[day].temp.day);
+        dayContainer.children().eq(2).text("Wind: " + forecastDays[day].wind_speed) + " MPH";
+        dayContainer.children().eq(3).text("Humidity: " + forecastDays[day].humidity) + "%";
     }
 }
 
+//weather("Atlanta");
 
-weather("Atlanta");
+function handleSearchFormSubmit(event) {
+    event.preventDefault();
+  
+    var searchCity = document.querySelector('#search-input').value;
+    // var formatInputVal = document.querySelector('#format-input').value;
+  
+    if (!searchCity) {
+      console.error('You need a search input value!');
+      return;
+    }
+  
+    console.log(searchCity);
+    weather(searchCity);
+  }
 
-
-
+searchForm.addEventListener('submit', handleSearchFormSubmit);
 
 
 

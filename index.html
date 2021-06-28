@@ -13,22 +13,66 @@
 </head>
 
 <body>
-
-  <div class="container">
+  <div class="full-grid">
     <header>
-      Weather Dashboard
+      <h2>Weather Dashboard</h2>
     </header>
   
     <nav>
-      Search City
+      <h3>Search City</h3>
+      <form id="search-form"">
+        <input id="search-input" class="form-input" type="text" placeholder="Atlanta"> <br><br>
+        <select id="format-input" class="form-input">
+          <option>Choose system</option>
+          <option value="imperial">Imperial (Farenheit, Miles)</option>
+          <option value="metric">Metric (Celsius, Kilometers)</option>
+        </select> <br><br>
+        <button class="btn btn-info btn-block">Search</button>
+      </form>
     </nav>
   
-    <main>
-      Current
+    <main id="current-weather">
+      <h2>City + Date</h2>
+      <div class="current-info">Temp</div>
+      <div class="current-info">Wind</div>
+      <div class="current-info">Humidity</div>
+      <div class="current-info">UV Index</div>
     </main>
   
     <section>
-      Forecast
+      <h4>5-Day Forecast</h4>
+       <div id="forecast-container" class="container">
+        <article class="forecast-day">
+          <div class="forecast-info">date</div>
+          <div class="forecast-info">Temp</div>
+          <div class="forecast-info">Wind</div>
+          <div class="forecast-info">Humidity</div>
+        </article>
+        <article class="forecast-day">
+          <div class="forecast-info">date</div>
+          <div class="forecast-info">Temp</div>
+          <div class="forecast-info">Wind</div>
+          <div class="forecast-info">Humidity</div>
+        </article>
+        <article class="forecast-day">
+          <div class="forecast-info">date</div>
+          <div class="forecast-info">Temp</div>
+          <div class="forecast-info">Wind</div>
+          <div class="forecast-info">Humidity</div>
+        </article>
+        <article class="forecast-day">
+          <div class="forecast-info">date</div>
+          <div class="forecast-info">Temp</div>
+          <div class="forecast-info">Wind</div>
+          <div class="forecast-info">Humidity</div>
+        </article>
+        <article class="forecast-day">
+          <div class="forecast-info">date</div>
+          <div class="forecast-info">Temp</div>
+          <div class="forecast-info">Wind</div>
+          <div class="forecast-info">Humidity</div>
+        </article>
+      </div> 
     </section>
   </div>
 

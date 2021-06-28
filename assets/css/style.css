@@ -1,6 +1,6 @@
 
 
-.container {
+.full-grid {
     display: grid;
   
     grid-template-areas:
@@ -8,11 +8,12 @@
       "search current current"
       "search forecast forecast";
   
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: auto 0.7fr 1fr;
     grid-gap: 10px;
   
-    height: 100vh;
+    height: 95vh;
+    width: 95vw;
   }
 
 header {
@@ -24,17 +25,46 @@ header {
 
 nav {
     grid-area: search;
-    background-color: blue;
 }
 
 main {
     grid-area: current;
-    background-color: rgb(246, 242, 242);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px;
+    border-radius: 4px;
+}
+
+.current-info {
+    margin: 15px;
 }
 
 section {
     grid-area: forecast;
+}
+
+section h4 {
+
+}
+
+#forecast-container {
+    display: flex;
+    flex-grow: 5;
+    color: white;
+}
+
+.forecast-day {
+    /* \width: 10%; */
+    /* height: 80%; */
+    margin: 20px;
     background-color: darkslategray;
+}
+
+.forecast-info {
+    margin: 10px;
+    display: block;
+    font-size:1.5rem;
 }
 
 /* 
