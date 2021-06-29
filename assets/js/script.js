@@ -26,7 +26,7 @@ async function weather(city){
 
 //get coordinates of city with OpenWeather's API
 async function getCityCoordinates(city) {
-    var geocodeUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
+    var geocodeUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
     //return fetch Promise of coordinates
     return fetch(geocodeUrl)
     .then(function (response) {
