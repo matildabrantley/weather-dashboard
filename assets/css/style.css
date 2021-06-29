@@ -20,7 +20,7 @@
 
 header {
     grid-area: header;
-    background-image: linear-gradient(to right, rgb(192, 255, 150) , rgb(3, 3, 70));
+    background-image: linear-gradient(to right, rgb(134, 162, 255) , rgb(3, 3, 70));
     color: white;
     text-align: center;
   }
@@ -31,6 +31,7 @@ aside {
 
 nav {
     grid-area: search;
+    margin-left: 5px;
 }
 
 #search-form {
@@ -40,6 +41,15 @@ nav {
 
 small {
     font-size: 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+.history-button {
+    background-color: gray;
+    /* margin: 5px; */
 }
 
 main {
@@ -69,8 +79,8 @@ section {
     display: none;
 }
 
-section h4 {
-
+section h3 {
+    margin-left: 15px;
 }
 
 #forecast-container {
@@ -95,7 +105,7 @@ section h4 {
     display: block;
     font-size:1.5rem;
 }
-.history-button {
-    background-color: gray;
-    margin: 5px;
+
+.forecast-info:first-child {
+    font-size:2.2rem;
 }

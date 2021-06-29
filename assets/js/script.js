@@ -170,26 +170,16 @@ function getDate(unixTime){
     return moment.unix(unixTime).format("MM/DD/YYYY")
 }
 
-
-// //display forecast weather by 3 hour intervals
-// function display5DayPer3HourForecast(forecastWeather){
-//     forecastDays = forecastWeather.list;
-//     for (var i=0; i<40; i++) {
-//         var date = moment.unix(forecastDays[d].dt).format("MM/DD/YYYY");
-//         console.log(date);
-//     }
-// }
-
-// //get 5-day per 3 hour forecast data by coordinates
-// async function get5DayPer3HourForecast(latitude, longitude) {
-//     var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude +'&units=imperial&appid=' + apiKey;
-//     //returjn fetch Promise of weather data object
-//     return fetch(weatherUrl)
-//     .then(function (response) {
-//         console.log(response);
-//         return response.json();
-//     })
-//     .then(function (weatherData) {
-//         return weatherData;
-//     });
-// };
+//get 5-day per 3 hour forecast data by coordinates
+/*async function get5DayPer3HourForecast(latitude, longitude) {
+    var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude +'&units=' + units + '&appid=' + apiKey;
+    //return fetch Promise of weather data object
+    return fetch(weatherUrl)
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function (weatherData) {
+        return weatherData;
+    });
+};*/
