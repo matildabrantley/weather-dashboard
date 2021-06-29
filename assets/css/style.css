@@ -1,47 +1,72 @@
-
+* {
+    font-family: 'Benne', serif; 
+}
 
 .full-grid {
     display: grid;
   
     grid-template-areas:
-      "header header header"
-      "search current current"
-      "search forecast forecast";
+      "header header header header"
+      "search current current margin"
+      "search forecast forecast margin";
   
-    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.05fr;
     grid-template-rows: auto 0.7fr 1fr;
     grid-gap: 10px;
   
     height: 95vh;
-    width: 95vw;
+    width: 100vw;
   }
 
 header {
     grid-area: header;
-    background-image: linear-gradient(to right, rgb(150, 150, 255) , rgb(3, 3, 70));
+    background-image: linear-gradient(to right, rgb(192, 255, 150) , rgb(3, 3, 70));
     color: white;
     text-align: center;
   }
+
+aside {
+    grid-area: margin;
+}
 
 nav {
     grid-area: search;
 }
 
+#search-form {
+    padding: 5px;
+    border-bottom: solid 2px;
+}
+
+small {
+    font-size: 10px;
+}
+
 main {
     grid-area: current;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     border: solid 1px;
     border-radius: 4px;
+    box-shadow:5px 5px 5px darkslategray;
+}
+
+main h2 {
+    margin: 10px;
 }
 
 .current-info {
-    margin: 15px;
+    margin: 10px;
+    padding: 5px;
+    width: max-content;
+    border-radius: 5px;
 }
 
 section {
     grid-area: forecast;
+    display: none;
 }
 
 section h4 {
@@ -50,15 +75,19 @@ section h4 {
 
 #forecast-container {
     display: flex;
+    justify-content:stretch;
+    flex-wrap: wrap;
     flex-grow: 5;
     color: white;
 }
 
 .forecast-day {
     /* \width: 10%; */
-    /* height: 80%; */
+    height: 50%;
     margin: 20px;
     background-color: darkslategray;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px darkslategray;
 }
 
 .forecast-info {
@@ -66,75 +95,7 @@ section h4 {
     display: block;
     font-size:1.5rem;
 }
-
-/* 
-#side-nav {
-    position: fixed;
-    top: 10%;
-    width: 20%;
-    display: inline-block;
-    margin-left: 10px;
+.history-button {
+    background-color: gray;
+    margin: 5px;
 }
-
-#search-form {
-    width: 100%;
-}
-
-#search-input {
-    width: 100%;
-}
-
-#format-input {
-    width: 100%;
-}
-
-main {
-    position: relative;
-    left: 25%;
-    width: 60%;
-    height: 80vh;
-}
-
-main article {
-    border: solid 1px;
-    border-radius: 4px;
-}
-
-main #current-weather {
-    height: 50%;
-    width: 100%;
-}
-
-main #forecast-section {
-    height: 50%;
-    width: 100%;
-}
-
-#forecast-section > article {
-    display: inline-flex;
-}
-
-.forecast-day {
-    background-color: darkslategrey;
-    color: white;
-    height: 60%;
-    margin: 1%;
-}
-
-.forecast-date {
-    font-size: 1.5rem;
-}
- 
-.forecast-info {
-    display: block;
-    font-size:1rem;
-}
-
-
-
-header h1 {
-    background-image: linear-gradient(to right, rgb(150, 150, 255) , rgb(3, 3, 70));
-    color: white;
-    text-align: center;
-    height: 10%;
-} */

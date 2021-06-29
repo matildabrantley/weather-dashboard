@@ -9,7 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -18,15 +21,18 @@
       <h2>Weather Dashboard</h2>
     </header>
   
-    <nav>
+    <nav id="search-section">
       <h3>Search City</h3>
       <form id="search-form"">
         <input id="search-input" class="form-input" type="text" placeholder="Atlanta"> <br><br>
-        <select id="format-input" class="form-input">
-          <option>Choose system</option>
-          <option value="imperial">Imperial (Farenheit, Miles)</option>
-          <option value="metric">Metric (Celsius, Kilometers)</option>
-        </select> <br><br>
+        <select id="units-input" class="form-input">
+          <option>Choose unit system</option>
+          <option value="imperial">Imperial</option>
+          <option value="metric">Metric</option>
+        </select><br>
+        <small>(Imperial: Farenheit, MPH)</small><br>
+        <small>(Metric: Celsius, KPH)</small>
+        <br><br>
         <button class="btn btn-info btn-block">Search</button>
       </form>
     </nav>
@@ -36,111 +42,52 @@
       <div class="current-info">Temp</div>
       <div class="current-info">Wind</div>
       <div class="current-info">Humidity</div>
-      <div class="current-info">UV Index</div>
+      <div class="current-info"></div>
     </main>
   
-    <section>
+    <section id="forecast-section">
       <h4>5-Day Forecast</h4>
        <div id="forecast-container" class="container">
         <article class="forecast-day">
           <div class="forecast-info">date</div>
+          <img class="forecast-info" src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
           <div class="forecast-info">Temp</div>
           <div class="forecast-info">Wind</div>
           <div class="forecast-info">Humidity</div>
         </article>
         <article class="forecast-day">
           <div class="forecast-info">date</div>
+          <img class="forecast-info" src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
           <div class="forecast-info">Temp</div>
           <div class="forecast-info">Wind</div>
           <div class="forecast-info">Humidity</div>
         </article>
         <article class="forecast-day">
           <div class="forecast-info">date</div>
+          <img class="forecast-info" src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
           <div class="forecast-info">Temp</div>
           <div class="forecast-info">Wind</div>
           <div class="forecast-info">Humidity</div>
         </article>
         <article class="forecast-day">
           <div class="forecast-info">date</div>
+          <img class="forecast-info" src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
           <div class="forecast-info">Temp</div>
           <div class="forecast-info">Wind</div>
           <div class="forecast-info">Humidity</div>
         </article>
         <article class="forecast-day">
           <div class="forecast-info">date</div>
+          <img class="forecast-info" src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
           <div class="forecast-info">Temp</div>
           <div class="forecast-info">Wind</div>
           <div class="forecast-info">Humidity</div>
         </article>
       </div> 
     </section>
+    <aside>.</aside>
   </div>
 
-
-
-  <!-- <header>
-    <h1>Weather Dashboard</h1>
-  </header> -->
-
-  <!-- <div id="side-nav">
-    <h2>Search for a City:</h2>
-    <form id="search-form"">
-      <input id="search-input" class="form-input" type="text" placeholder="Atlanta"> <br><br>
-      <select id="format-input" class="form-input">
-        <option>Choose system</option>
-        <option value="imperial">Imperial (Farenheit, Miles)</option>
-        <option value="metric">Metric (Celsius, Kilometers)</option>
-      </select> <br><br>
-      <button class="btn btn-info btn-block">Search</button>
-    </form>
-  </div>
-  <main>
-    <article id="current-weather">
-      <div class="forecast-date">date</div>
-        <br>
-        <div class="info">Temp</div>
-        <div class="info">Wind</div>
-        <div class="info">Humidity</div>
-    </article>
-    <br>
-    <section id="forecast-section">
-      <h3>5-Day Forecast</h3>
-      <article class="forecast-day">
-        <div class="forecast-date">date</div>
-        <div class="forecast-info">Temp</div>
-        <div class="forecast-info">Wind</div>
-        <div class="forecast-info">Humidity</div>
-      </article>
-      <article class="forecast-day">
-        <div class="forecast-date">date</div>
-        <br>
-        <div class="forecast-info">Temp</div>
-        <div class="forecast-info">Wind</div>
-        <div class="forecast-info">Humidity</div>
-      </article>
-      <article class="forecast-day">
-        <div class="forecast-date">date</div>
-        <br>
-        <div class="forecast-info">Temp</div>
-        <div class="forecast-info">Wind</div>
-        <div class="forecast-info">Humidity</div>
-      </article>
-      <article class="forecast-day">
-        <div class="forecast-date">date</div>
-        <br>
-        <div class="forecast-info">Temp</div>
-        <div class="forecast-info">Wind</div>
-        <div class="forecast-info">Humidity</div>
-      </article>
-      <article class="forecast-day">
-        <div class="forecast-date">date</div>
-        <br>
-        <div class="forecast-info">Temp</div>
-        <div class="forecast-info">Wind</div>
-        <div class="forecast-info">Humidity</div>
-      </article>
-    </section>
-  </main> -->
   <script src="./assets/js/script.js"></script>
 </body>
 
