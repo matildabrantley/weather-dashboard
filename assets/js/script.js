@@ -78,7 +78,7 @@ function displayWeather(currentWeather, forecastDays, city){
 
     $('#forecast-section').css('display', 'block');
     forecastContainer = $('#forecast-container');
-    iconSource = "http://openweathermap.org/img/wn/";
+    iconSource = "https://openweathermap.org/img/wn/";
     for (var day=1; day<6; day++) {
         //target forecasted day's element
         var dayContainer = forecastContainer.children().eq(day-1);
