@@ -109,3 +109,29 @@ section h3 {
 .forecast-info:first-child {
     font-size:2.2rem;
 }
+
+.backgrounds {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.25;
+    z-index:-1;
+    background-size: cover;
+}
+
+/* #background0 {
+    background: rgb(50,50,50)  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+} */
+#background1 {
+    background: url("css-backgrounds/weather-clouds-painted.jpg")  no-repeat center center fixed;    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+#background2 {
+    background: url("css-backgrounds/weather-clouds.jpg")  no-repeat center center fixed;    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}

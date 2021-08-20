@@ -2,6 +2,9 @@ var resultText = $('#result-text');
 var resultContent = $('#result-content');
 var searchForm = document.querySelector('#search-form');
 var units = "imperial"; //imperial is default, metric is other option
+var bgOpacity = 0.3;
+var bgOpacity2 = 0;
+var bgOpacityDirection = 1;
 const apiKey = 'a641bf9af84171a774e42ab0fb8b528b';
 
 searchForm.addEventListener('submit', searchFormSubmit);
@@ -169,6 +172,21 @@ function setUVIColor (uvi, element) {
 function getDate(unixTime){
     return moment.unix(unixTime).format("MM/DD/YYYY")
 }
+
+setInterval(() => { 
+    const bg1 = $('#background1');
+    const bg2 = $('#background2');
+    if (bgOpacity > 0.3)
+        bgOpacityDirection = -1;
+    else if (bgOpacity < 0)
+        bgOpacityDirection = 1;
+    
+    bgOpacity += 0.002 * bgOpacityDirection;
+    bgOpacity2 += 0.002 * bgOpacityDirection * -1;
+
+    bg1.css('opacity', bgOpacity) 
+    bg2.css('opacity', bgOpacity2) 
+}, 100);
 
 //get 5-day per 3 hour forecast data by coordinates
 /*async function get5DayPer3HourForecast(latitude, longitude) {
